@@ -311,7 +311,6 @@ const password = generatePassword(
 
 console.log(`Generated password: ${password}`);
 
-
 // Object oriented programming
 const person1 = {
   firstName: "Spongebob",
@@ -452,7 +451,6 @@ const hawk = new Hawk("Hawky", 3, 50);
 
 rabbit.run();
 
-
 class Rectangle {
   constructor(width, height) {
     this.width = width;
@@ -483,7 +481,6 @@ class Rectangle {
   get area() {
     return (this._width * this._height).toFixed(1);
   }
-
 }
 
 const rectangle = new Rectangle(5, 10);
@@ -496,7 +493,7 @@ console.log(rectangle.height);
 console.log(rectangle.area);
 
 // shuffle deck of cards
-const deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+const deck = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 
 function shuffleDeck(deck) {
   for (let i = deck.length - 1; i > 0; i--) {
@@ -513,7 +510,6 @@ console.log(deck);
 const date = new Date(1);
 
 console.log(date);
-
 
 // closures
 function createScoreManager() {
@@ -544,7 +540,6 @@ const scoreManager = createScoreManager();
 scoreManager.increaseScore(10);
 scoreManager.decreaseScore(5);
 
-
 // Timer
 function startTimer() {
   timeoutId = setTimeout(() => window.alert("Timer finished!"), 3000);
@@ -556,10 +551,8 @@ function clearTimer() {
   console.log("Timer cleared");
 }
 
-
 //clock
 function updateClock() {
-
   const now = new Date();
   const hours = now.getHours().toString().padStart(2, "0");
   const minutes = now.getMinutes().toString().padStart(2, "0");
@@ -603,10 +596,18 @@ function reset() {
 
 function update() {
   elapsedTime = Date.now() - startTime;
-  const hours = Math.floor(elapsedTime / (1000 * 60 * 60)).toString().padStart(2, "0");
-  const minutes = Math.floor((elapsedTime / (1000 * 60) % 60)).toString().padStart(2, "0");
-  const seconds = Math.floor((elapsedTime / 1000 % 60)).toString().padStart(2, "0");
-  const milliseconds = Math.floor((elapsedTime % 1000) / 10).toString().padStart(2, "0");
+  const hours = Math.floor(elapsedTime / (1000 * 60 * 60))
+    .toString()
+    .padStart(2, "0");
+  const minutes = Math.floor((elapsedTime / (1000 * 60)) % 60)
+    .toString()
+    .padStart(2, "0");
+  const seconds = Math.floor((elapsedTime / 1000) % 60)
+    .toString()
+    .padStart(2, "0");
+  const milliseconds = Math.floor((elapsedTime % 1000) / 10)
+    .toString()
+    .padStart(2, "0");
 
   display.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
@@ -665,7 +666,7 @@ fruits2[0].style.color = "lightgreen";
 
 const ulElements = document.querySelectorAll("ul");
 
-ulElements.forEach(ul => {
+ulElements.forEach((ul) => {
   const firstChild = ul.firstElementChild;
   firstChild.style.color = "red";
 });
@@ -673,7 +674,6 @@ ulElements.forEach(ul => {
 const element2 = document.getElementById("carrots");
 const prevSibling = element2.previousElementSibling;
 prevSibling.style.color = "green";
-
 
 const newH1 = document.createElement("h1");
 
@@ -707,3 +707,70 @@ newListItem.style.color = "orange";
 
 const listItems = document.querySelectorAll("#fruits li");
 document.getElementById("fruits").insertBefore(newListItem, listItems[1]);
+
+
+const myBox = document.getElementById("myBox");
+const myButton5 = document.getElementById("myButton5");
+
+myButton5.addEventListener("click", function (event) {
+  myBox.style.backgroundColor = "lightblue";
+  myBox.textContent = "Clicked!";
+});
+
+myButton5.addEventListener("mouseover", function (event) {
+  myBox.style.backgroundColor = "orange";
+  myBox.textContent = "Hovered!";
+});
+
+myButton5.addEventListener("mouseout", function (event) {
+  myBox.style.backgroundColor = "lightgreen";
+  myBox.textContent = "Click me";
+});
+
+
+const moveAmount = 10;
+let x = 0;
+let y = 0;
+
+document.addEventListener("keydown", function (event) {
+  if(event.key.startsWith("Arrow")) {
+
+    event.preventDefault();
+
+    switch (event.key) {
+      case "ArrowUp":
+        y -= moveAmount;
+        break;
+      case "ArrowDown":
+        y += moveAmount;
+        break;
+      case "ArrowLeft":
+        x -= moveAmount;
+        break;
+      case "ArrowRight":
+        x += moveAmount;
+        break;
+    }
+    myBox.style.top = `${y}px`;
+    myBox.style.left = `${x}px`;
+  }
+});
+ 
+document.addEventListener("keyup", function (event) {
+  myBox.textContent = `Key released: ${event.key}`;
+  myBox.style.backgroundColor = "lightgreen";
+});
+
+
+const myButton6 = document.getElementById("myButton6");
+const myImage = document.getElementById("myImage");
+
+myButton6.addEventListener("click", function () {
+  if (myImage.style.visibility === "hidden") {
+    myImage.style.visibility = "visible";
+    myButton6.textContent = "Hide";
+  } else {
+    myImage.style.visibility = "hidden";
+    myButton6.textContent = "Show";
+  }
+});

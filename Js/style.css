@@ -251,3 +251,14 @@ input {
   border: 3px solid;
   font-size: 2rem;
 }
+
+#myBox {
+  width: 300px;
+  height: 300px;
+  font-size: 4.5rem;
+  background-color: lightgreen;
+  display: flex;
+  align-items: center;
+  text-align: c;
+  position: relative;
+}
