@@ -262,3 +262,18 @@ input {
   text-align: c;
   position: relative;
 }
+
+.enabled {
+  background-color: blue;
+  color: white;
+}
+
+.hover {
+  box-shadow: 0 0 10px rgb(54, 54, 54);
+  font-weight: bold;
+}
+
+.disabled {
+  background-color: gray;
+  color: black;
+}

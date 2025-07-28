@@ -708,7 +708,6 @@ newListItem.style.color = "orange";
 const listItems = document.querySelectorAll("#fruits li");
 document.getElementById("fruits").insertBefore(newListItem, listItems[1]);
 
-
 const myBox = document.getElementById("myBox");
 const myButton5 = document.getElementById("myButton5");
 
@@ -727,14 +726,12 @@ myButton5.addEventListener("mouseout", function (event) {
   myBox.textContent = "Click me";
 });
 
-
 const moveAmount = 10;
 let x = 0;
 let y = 0;
 
 document.addEventListener("keydown", function (event) {
-  if(event.key.startsWith("Arrow")) {
-
+  if (event.key.startsWith("Arrow")) {
     event.preventDefault();
 
     switch (event.key) {
@@ -755,12 +752,11 @@ document.addEventListener("keydown", function (event) {
     myBox.style.left = `${x}px`;
   }
 });
- 
+
 document.addEventListener("keyup", function (event) {
   myBox.textContent = `Key released: ${event.key}`;
   myBox.style.backgroundColor = "lightgreen";
 });
-
 
 const myButton6 = document.getElementById("myButton6");
 const myImage = document.getElementById("myImage");
@@ -772,5 +768,49 @@ myButton6.addEventListener("click", function () {
   } else {
     myImage.style.visibility = "hidden";
     myButton6.textContent = "Show";
+  }
+});
+
+let buttons = document.querySelectorAll(".buttons");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", function (event) {
+    // event.target.remove();
+    // buttons = document.querySelectorAll(".buttons");
+  });
+  button.addEventListener("mouseover", function (event) {
+    event.target.style.backgroundColor = "lightgreen";
+  });
+  button.addEventListener("mouseout", function (event) {
+    event.target.style.backgroundColor = "gold";
+  });
+});
+
+const newButton = document.createElement("button");
+newButton.textContent = "New Button";
+newButton.classList = "buttons";
+document.body.appendChild(newButton);
+buttons = document.querySelectorAll(".buttons");
+
+
+const myButton7 = document.getElementById("myButton7");
+myButton7.classList.add("enabled");
+
+myButton7.addEventListener("mouseover", function (event) {
+  event.target.classList.add("hover");
+});
+
+myButton7.addEventListener("mouseout", function (event) {
+  event.target.classList.remove("hover");
+});
+
+myButton7.addEventListener("click", function (event) {
+
+  if (event.target.classList.contains("enabled")) {
+    event.target.classList.remove("enabled");
+    event.target.classList.add("disabled");
+  } else {
+    event.target.classList.remove("disabled");
+    event.target.classList.add("enabled");
   }
 });
