@@ -277,3 +277,80 @@ input {
   background-color: gray;
   color: black;
 }
+
+.choices {
+  margin-bottom:30px;
+}
+
+.choices button {
+  font-size: 7.5rem;
+  min-width: 160px;
+  margin: 0 10px;
+  border-radius: 250px;
+  background-color: rgb(0, 183, 255);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.choices button:hover {
+  background-color: rgb(0, 153, 204);
+}
+
+#playerDisplay, #computerDisplay, .scoreDisplay {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#resultDisplay {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+.greenText, #playerScoreDisplay {
+  color: rgb(29, 168, 29);
+}
+
+.redText, #computerScoreDisplay {
+  color: rgb(255, 0, 0);
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 50%;
+  display: none;
+}
+
+img.displaySlide {
+  display: block;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: hsl(0, 0%, 0%, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 50%;
+}
+@keyframes fade {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}

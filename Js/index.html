@@ -166,6 +166,38 @@
 
   <button id="myButton7" class="buttons">My Button</button>
 
+  <!-- Rock - Paper - Scissors -->
+  <h1>Rock - Paper - Scissors</h1>
+
+  <div class="choices">
+    <button onclick="playGame('rock')">👊</button>
+    <button onclick="playGame('paper')">✋</button>
+    <button onclick="playGame('scissors')">✌️</button>
+  </div>
+
+  <div id="playerDisplay">Player: </div>
+  <div id="computerDisplay">Computer: </div>
+  <div id="resultDisplay">Result: </div>
+
+  <div class="scoreDisplay">Player Score:
+    <span id="playerScoreDisplay">0</span>
+  </div>
+
+  <div class="scoreDisplay">Computer Score:
+    <span id="computerScoreDisplay">0</span>
+  </div>
+
+  <!-- Image Slider -->
+   <div class="slider">
+     <div class="slides">
+        <img class="slide" src="Image1.png" alt="Image1">
+        <img class="slide" src="Image2.png" alt="Image2">
+        <img class="slide" src="Image3.png" alt="Image3">
+     </div>
+     <button class="prev" onclick="prevSlide()">&#10094</button>
+     <button class="next" onclick="nextSlide()">&#10095</button>
+   </div>
+
   <script src="index.js"></script>
 </body>
 

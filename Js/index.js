@@ -786,12 +786,13 @@ buttons.forEach((button) => {
   });
 });
 
+/** 
 const newButton = document.createElement("button");
 newButton.textContent = "New Button";
 newButton.classList = "buttons";
 document.body.appendChild(newButton);
 buttons = document.querySelectorAll(".buttons");
-
+*/
 
 const myButton7 = document.getElementById("myButton7");
 myButton7.classList.add("enabled");
@@ -805,7 +806,6 @@ myButton7.addEventListener("mouseout", function (event) {
 });
 
 myButton7.addEventListener("click", function (event) {
-
   if (event.target.classList.contains("enabled")) {
     event.target.classList.remove("enabled");
     event.target.classList.add("disabled");
@@ -814,3 +814,89 @@ myButton7.addEventListener("click", function (event) {
     event.target.classList.add("enabled");
   }
 });
+
+// Rock - Paper - Scissors
+const choices = ["rock", "paper", "scissors"];
+const playerDisplay = document.getElementById("playerDisplay");
+const computerDisplay = document.getElementById("computerDisplay");
+const resultDisplay = document.getElementById("resultDisplay");
+const playerScoreDisplay = document.getElementById("playerScoreDisplay");
+const computerScoreDisplay = document.getElementById("computerScoreDisplay");
+let playerScore = 0;
+let computerScore = 0;
+
+function playGame(playerChoice) {
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+  let result = "";
+
+  if (playerChoice === computerChoice) {
+    result = "It's a tie!";
+  } else if (
+    (playerChoice === "rock" && computerChoice === "scissors") ||
+    (playerChoice === "paper" && computerChoice === "rock") ||
+    (playerChoice === "scissors" && computerChoice === "paper")
+  ) {
+    result = "You win!";
+    playerScore++;
+    playerScoreDisplay.textContent = `${playerScore}`;
+  } else {
+    result = "You lose!";
+    computerScore++;
+    computerScoreDisplay.textContent = `${computerScore}`;
+  }
+
+  playerDisplay.textContent = `Player: ${playerChoice}`;
+  computerDisplay.textContent = `Computer: ${computerChoice}`;
+  resultDisplay.textContent = result;
+
+  resultDisplay.classList.remove("greenText", "redText");
+
+  switch (result) {
+    case "You win!":
+      resultDisplay.classList.add("greenText");
+      break;
+    case "You lose!":
+      resultDisplay.classList.add("redText");
+      break;
+  }
+}
+
+// Image slider
+const slides = document.querySelectorAll(".slides img");
+let slideIndex = 0;
+let intervalId = null;
+
+document.addEventListener("DOMContentLoaded", initializeSlider);
+
+function initializeSlider() {
+  if (slides.length > 0) {
+    slides[slideIndex].classList.add("displaySlide");
+    intervalId = setInterval(nextSlide, 5000);
+  }
+}
+
+function showSlide(index) {
+
+  if (index >= slides.length) {
+    slideIndex = 0;
+  }
+  if (index < 0) {
+    slideIndex = slides.length - 1;
+  }
+
+  slides.forEach((slide) => {
+    slide.classList.remove("displaySlide");
+  });
+  slides[slideIndex].classList.add("displaySlide");
+}
+
+function prevSlide() {
+  clearInterval(intervalId);
+  slideIndex--;
+  showSlide(slideIndex);
+}
+
+function nextSlide() {
+  slideIndex++;
+  showSlide(slideIndex);
+}
