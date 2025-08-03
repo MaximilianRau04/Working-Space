@@ -900,3 +900,124 @@ function nextSlide() {
   slideIndex++;
   showSlide(slideIndex);
 }
+
+
+// Callback Hell
+function task1(callback) {
+
+  setTimeout(() => {
+    console.log("Task 1 completed");
+    callback();
+  }, 1000);
+}
+
+function task2(callback) {
+  setTimeout(() => {
+    console.log("Task 2 completed");
+    callback();
+  }, 2000);
+}
+
+function task3(callback) {
+  setTimeout(() => {
+    console.log("Task 3 completed");
+    callback();
+  }, 3000);
+}
+
+function task4(callback) {
+  setTimeout(() => {
+    console.log("Task 4 completed");
+    callback();
+  }, 1500);
+}
+
+/** 
+task1(() => {
+  task2(() => {
+    task3(() => {
+      task4(() => {
+        console.log("All tasks completed");
+      });
+    });
+  });
+});
+*/
+
+//Promises
+function walkDog() {
+  
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const dogWalked = true; 
+      if (dogWalked) {
+        resolve("Dog walked");
+      } else {
+        reject("Dog not walked, cannot clean kitchen");
+      }
+    }, 1500);
+  });
+}
+
+function cleanKitchen() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+
+      const kitchenCleaned = true; 
+      if (kitchenCleaned) {
+        resolve("Kitchen cleaned");
+      } else {
+        reject("Kitchen not cleaned, cannot take out trash");
+      }
+    }, 2500);
+  });
+}
+
+function takeOutTrash() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+
+      const trashTakenOut = true; 
+      if (trashTakenOut) {
+        resolve("Trash taken out");
+      } else {
+        reject("Trash not taken out");
+      }
+    }, 500);
+  });
+}
+
+walkDog()
+  .then((result) => {
+    console.log(result);
+    return cleanKitchen();
+  })
+  .then((result) => {
+    console.log(result);
+    return takeOutTrash();
+  })
+  .then((result) => {   
+    console.log(result);
+    console.log("All tasks completed");
+  })
+  .catch((error) => {
+    console.error("An error occurred:", error);
+  });
+
+// Async/Await
+async function performTasks() {
+
+  try {
+    const walkDogResult = await walkDog();
+    console.log(walkDogResult);
+
+    const cleanKitchenResult = await cleanKitchen();
+    console.log(cleanKitchenResult);
+
+    const takeOutTrashResult = await takeOutTrash();
+    console.log(takeOutTrashResult);
+    
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+}
