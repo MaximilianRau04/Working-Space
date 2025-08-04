@@ -354,3 +354,11 @@ img.displaySlide {
   from { opacity: 0.5; }
   to { opacity: 1; }
 }
+
+#pokemonName {
+  width: 175px;
+  padding: 8px;
+  font-size: 1em;
+  border: 2px solid hsl(214, 100%, 74%);
+  border-radius: 5px;
+}

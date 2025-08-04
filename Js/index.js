@@ -987,6 +987,7 @@ function takeOutTrash() {
   });
 }
 
+/** 
 walkDog()
   .then((result) => {
     console.log(result);
@@ -1021,3 +1022,55 @@ async function performTasks() {
     console.error("An error occurred:", error);
   }
 }
+*/
+
+// JSON
+fetch("person.json")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching JSON:", error);
+  });
+
+fetch("names.json")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching JSON:", error);
+  });
+
+fetch("people.json")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching JSON:", error);
+  });
+
+
+  // fetch data from an API
+async function fetchData() {
+  try {
+    const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    if (!response.ok) {
+      throw new Error("An error occurred while fetching the API data: " + response.statusText);
+    }
+    const data = await response.json();
+    const pokemonSprite = data.sprites.front_default;
+    const imgElement = document.getElementById("pokemonSprite");
+    imgElement.src = pokemonSprite;
+    imgElement.style.display = "block";
+    
+  } catch (error) {
+    console.error("Error fetching API data:", error);
+  }
+}
+
+fetchData();
