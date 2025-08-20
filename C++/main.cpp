@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <cmath>    
 
 namespace first {
@@ -31,15 +30,39 @@ int main() {
     double b;
     double c;
 
-    std::cout << "Enter the length of side a: ";
-    std::cin >> a;
+    //std::cout << "Enter the length of side a: ";
+    //std::cin >> a;
 
-    std::cout << "Enter the length of side b: ";
-    std::cin >> b;
+    //std::cout << "Enter the length of side b: ";
+    //std::cin >> b;
 
-    c = sqrt(pow(a, 2) + pow(b, 2));
+    //c = sqrt(pow(a, 2) + pow(b, 2));
 
-    std::cout << "The length of the hypotenuse is: " << c << '\n';
+    //std::cout << "The length of the hypotenuse is: " << c << '\n';
+
+    int grade = 50;
+
+    grade >= 60 ? std::cout << "Passed" << '\n' : std::cout << "Failed" << '\n';
+
+    int rows;
+    int cols;
+    char symbol;
+
+    std::cout << "Enter the number of rows: ";
+    std::cin >> rows;
+
+    std::cout << "Enter the number of columns: ";
+    std::cin >> cols;
+
+    std::cout << "Enter a symbol: ";
+    std::cin >> symbol;
+
+    for (int i=0; i < rows; i++) {
+        for (int j=0; j < cols; j++) {
+            std::cout << symbol;
+        }
+        std::cout << '\n';
+    }
 
     return 0;
 }
