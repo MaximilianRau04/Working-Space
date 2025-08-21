@@ -14,7 +14,7 @@ int main() {
     char sign;
     std::cout << "Enter a number: ";
     std::cin >> a;
-    std::cout << "Enter an operator (+, -, *, /, %, ^, !, s (sqrt)): ";
+    std::cout << "Enter an operator (+, -, *, /, %, ^, !, s (for sqrt)): ";
     std::cin >> sign;
 
     if (sign == '!') {
