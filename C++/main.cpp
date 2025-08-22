@@ -44,25 +44,10 @@ int main() {
 
     grade >= 60 ? std::cout << "Passed" << '\n' : std::cout << "Failed" << '\n';
 
-    int rows;
-    int cols;
-    char symbol;
+    std::string cars[] = {"BMW", "Audi", "Mercedes"};
 
-    std::cout << "Enter the number of rows: ";
-    std::cin >> rows;
-
-    std::cout << "Enter the number of columns: ";
-    std::cin >> cols;
-
-    std::cout << "Enter a symbol: ";
-    std::cin >> symbol;
-
-    for (int i=0; i < rows; i++) {
-        for (int j=0; j < cols; j++) {
-            std::cout << symbol;
-        }
-        std::cout << '\n';
-    }
+    cars[0] = "Porsche";
+    std::cout << sizeof(cars[0])<< '\n';
 
     return 0;
 }
