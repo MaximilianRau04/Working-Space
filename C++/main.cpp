@@ -44,10 +44,37 @@ int main() {
 
     grade >= 60 ? std::cout << "Passed" << '\n' : std::cout << "Failed" << '\n';
 
-    std::string cars[] = {"BMW", "Audi", "Mercedes"};
+    std::string cars[3] = {"BMW", "Audi", "Mercedes"};
 
     cars[0] = "Porsche";
+    fill(cars+1, cars + sizeof(cars) / sizeof(cars[0]), "Unknown");
+
     std::cout << sizeof(cars[0])<< '\n';
+
+    for (std::string car : cars) {
+        std::cout << car << '\n';
+    }
+
+    int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int size = sizeof(numbers) / sizeof(numbers[0]);
+    int index = -1;
+    int myNum;
+
+    std::cout << "Enter an element to search for: ";
+    std::cin >> myNum;
+
+    for (int i = 0; i < size; i++) {
+        if (numbers[i] == myNum) {
+            index = i;
+            break;
+        }
+    }
+
+    if (index != -1) {
+        std::cout << "Element found at index: " << index << '\n';
+    } else {
+        std::cout << "Element not found." << '\n';
+    }
 
     return 0;
 }
