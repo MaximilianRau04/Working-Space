@@ -60,6 +60,7 @@ int main() {
     int index = -1;
     int myNum;
 
+    /** 
     std::cout << "Enter an element to search for: ";
     std::cin >> myNum;
 
@@ -74,6 +75,26 @@ int main() {
         std::cout << "Element found at index: " << index << '\n';
     } else {
         std::cout << "Element not found." << '\n';
+    }
+    */
+
+    std::string foods[5];
+    int size1 = sizeof(foods) / sizeof(foods[0]);
+    std::string temp;
+
+    for (int i = 0; i < size1; i++) {
+        std::cout << "Enter food item or 'q' to quit" << i + 1 << ": ";
+        std::getline(std::cin, temp);
+        if (temp == "q") {
+            break;
+        } else {
+            foods[i] = temp;
+        }
+    }
+
+    std::cout << "You entered:" << '\n';
+    for (int i = 0; !foods[i].empty(); i++) {
+        std::cout << foods[i] << '\n';
     }
 
     return 0;
