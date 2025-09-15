@@ -97,5 +97,9 @@ int main() {
         std::cout << foods[i] << '\n';
     }
 
+    int *ptr = nullptr;
+    int var = 42;
+    ptr = &var;
+
     return 0;
 }
