@@ -6,6 +6,21 @@ namespace first {
     int x = 1;
 }
 
+template <typename T, typename U>
+
+auto max (T x, U y) {
+    return (x > y) ? x : y;
+}
+
+struct Car {
+    std::string brand;
+    std::string model;
+    int year;
+};
+
+enum Day { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday };
+
+
 // typedef std::vector<std::pair<std::string, int>> pairList_t;
 using text_t = std::string;
 using number_t = int;
@@ -82,8 +97,9 @@ int main() {
     int size1 = sizeof(foods) / sizeof(foods[0]);
     std::string temp;
 
+    /** 
     for (int i = 0; i < size1; i++) {
-        std::cout << "Enter food item or 'q' to quit" << i + 1 << ": ";
+        std::cout << "Enter food item or 'q' to quit " << ": ";
         std::getline(std::cin, temp);
         if (temp == "q") {
             break;
@@ -96,10 +112,20 @@ int main() {
     for (int i = 0; !foods[i].empty(); i++) {
         std::cout << foods[i] << '\n';
     }
+    */
 
     int *ptr = nullptr;
     int var = 42;
     ptr = &var;
+
+    std::cout << max(1, '2') << '\n';
+
+    Car car1;
+    car1.brand = "Ford";
+    car1.model = "Mustang";
+    car1.year = 2020;
+
+    std::cout << car1.brand << " " << car1.model << " " << car1.year << '\n';
 
     return 0;
 }
