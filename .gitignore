@@ -107,3 +107,17 @@ Cargo.lock
 *.sublime-workspace
 *.sublime-project
 *.vscode/
+
+# ==========================
+# Build-Ausgaben
+# ==========================
+bin/
+obj/
+out/
+
+# Dotnet Tools
+.dotnet/
+
+# Paket-Cache
+.nuget/
+packages/
