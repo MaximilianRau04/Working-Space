@@ -20,9 +20,7 @@ class Program {
         int randomNumber = random.Next(1, 101);
         double num = random.NextDouble() * 100;
 
-        Console.WriteLine("Your random number is: " + randomNumber);
-        Console.WriteLine("Your random double is: " + num);
-
+        /**
         Console.WriteLine("What day is today? ");
         string day = Console.ReadLine();
         
@@ -52,6 +50,11 @@ class Program {
                 Console.WriteLine("That's not a valid day.");
                 break;
         }
+        */
+
+        // Program2.guess();
+        // Program3.rps();
+        Program4.calculator();
 
     }
 }
