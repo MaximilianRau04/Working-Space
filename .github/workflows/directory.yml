@@ -19,8 +19,8 @@ jobs:
       - name: Run Directory Tree Generator
         uses: MaximilianRau/directory-tree-generator@v2
         with:
-          path: "backend,frontend"
-          extensions: ".java,.html,.js,.css, .jsx"
+          path: "Angular,Bash,C#,C++.C,Java,Js,Python,Rust"
+          extensions: ".html,.ts,.scss,.sh,.cs,.cpp,.c,.java,.js,.py,.rs"
           show-extensions: true
           output: "DIRECTORY.md
 
