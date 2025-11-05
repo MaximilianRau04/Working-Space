@@ -3,8 +3,9 @@
 namespace MyApp;
 
 class Program {
-    static void Main(string[] args) {
-        
+    static void Main(string[] args)
+    {
+
         /**
         Console.WriteLine("Enter your name: ");
         String name = Console.ReadLine();
@@ -54,7 +55,13 @@ class Program {
 
         // Program2.guess();
         // Program3.rps();
-        Program4.calculator();
+        // Program4.calculator();
+
+        String[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+        
+        foreach (String car in cars) {
+            Console.WriteLine(car);
+        }
 
     }
 }
