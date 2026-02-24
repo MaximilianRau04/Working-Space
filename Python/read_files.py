@@ -2,7 +2,7 @@
 import json
 import csv
 
-file_path = "output.csv"
+file_path = "resources/output.csv"
 
 try:
     with open(file_path, "r") as file:

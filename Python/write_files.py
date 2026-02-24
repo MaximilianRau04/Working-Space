@@ -13,8 +13,8 @@ employees = [["Name", "Age", "Job"],
             ["Bart", 20, "Engineer"],
             ["Lisa", 25, "Teacher"]]
 
-json_path = "output.json"
-csv_path = "output.csv"
+json_path = "resources/output.json"
+csv_path = "resources/output.csv"
 
 try:
     with open(file=json_path, mode="w") as f:

@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
 
         # Image
         self.image_label = QLabel()
-        pixmap = QPixmap("Guts.jpeg")
+        pixmap = QPixmap("resources/Guts.jpeg")
         self.image_label.setPixmap(pixmap.scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.image_label.setAlignment(Qt.AlignRight)
         main_layout.addWidget(self.image_label)

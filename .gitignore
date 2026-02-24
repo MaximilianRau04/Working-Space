@@ -1,7 +1,3 @@
-# ==========================
-# Allgemeine Ignorierungen
-# ==========================
-
 # Backup-Dateien
 *~
 *.swp
@@ -12,9 +8,7 @@ Thumbs.db
 # Log-Dateien
 *.log
 
-# ==========================
 # Python
-# ==========================
 __pycache__/
 *.py[cod]
 *.pyo
@@ -33,9 +27,7 @@ myenv/
 # Jupyter
 .ipynb_checkpoints/
 
-# ==========================
-# Java (auch für IntelliJ)
-# ==========================
+# Java (also for IntelliJ)
 *.class
 *.jar
 *.war
@@ -54,9 +46,7 @@ out/
 build/
 !gradle/wrapper/gradle-wrapper.jar
 
-# ==========================
 # C/C++
-# ==========================
 *.o
 *.out
 *.obj
@@ -68,9 +58,7 @@ build/
 *.dSYM/
 build/
 
-# ==========================
 # JavaScript / Node.js
-# ==========================
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -80,37 +68,27 @@ dist/
 .next/
 out/
 
-# ==========================
 # Rust
-# ==========================
 /target/
 Cargo.lock
 
-# ==========================
 # IntelliJ / PyCharm / JetBrains IDEs
-# ==========================
 .idea/
 *.iws
 *.ipr
 *.iml
 
-# ==========================
 # VS Code
-# ==========================
 .vscode/
 .history/
 .code-workspace
 
-# ==========================
 # Sonstige Tools / Editor-spezifisch
-# ==========================
 *.sublime-workspace
 *.sublime-project
 *.vscode/
 
-# ==========================
-# Build-Ausgaben
-# ==========================
+# Build-Outputs
 bin/
 obj/
 out/
